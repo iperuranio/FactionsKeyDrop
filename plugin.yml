@@ -1,0 +1,11 @@
+name: FactionKeyDrop
+version: 1.0
+description: Mob droppano frammenti di Key
+author: claxon007
+main: main.Main
+
+commands:
+  givekey:
+    usage: /<command>
+  convertkey:
+    usage: /<command>
