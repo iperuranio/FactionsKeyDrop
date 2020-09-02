@@ -1,4 +1,4 @@
-package main;
+package it.evermine.factionskeydrop;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,14 +9,11 @@ public class GiveKey implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] args) {
-		if(sender.isOp())
-		{
+		if (sender.isOp()) {
 			Player p = (Player) sender;
-			
-			p.getInventory().addItem(Main.frammento_koth);
-		}
-		else
-		{
+
+			p.getInventory().addItem(FactionsKeyDrop.frammento_koth);
+		} else {
 			sender.sendMessage("Comando sconosciuto.");
 		}
 		return true;

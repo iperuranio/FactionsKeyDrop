@@ -1,4 +1,4 @@
-package main;
+package it.evermine.factionskeydrop;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,9 +27,9 @@ public class ConvertKey implements CommandExecutor {
 			
 			for(ItemStack is : inv.getContents()) {
 				if(is != null) {
-					if(is.isSimilar(Main.frammento)) {
+					if(is.isSimilar(FactionsKeyDrop.frammento)) {
 						key += is.getAmount();
-					} else if(is.isSimilar(Main.frammento_koth)) {
+					} else if(is.isSimilar(FactionsKeyDrop.frammento_koth)) {
 						koth += is.getAmount();
 					}
 				}
@@ -46,15 +46,15 @@ public class ConvertKey implements CommandExecutor {
 			}
 			
 			if(key != 0 && koth != 0 && key % 9 == 0 && koth % 2 == 0) {
-				remove(Main.frammento, inv, key);
-				remove(Main.frammento_koth, inv, koth);
+				remove(FactionsKeyDrop.frammento, inv, key);
+				remove(FactionsKeyDrop.frammento_koth, inv, koth);
 				
 				for(int i = 0; i < key/9; i++) {
-					addItem(inv, Main.key, p.getLocation());
+					addItem(inv, FactionsKeyDrop.key, p.getLocation());
 				}
 				
 				for(int i = 0; i < koth/2; i++) {
-					addItem(inv, Main.key_koth, p.getLocation());
+					addItem(inv, FactionsKeyDrop.key_koth, p.getLocation());
 				}
 				p.sendMessage("§2§lFazioni §8§l» §7Sono stati convertiti §a"+key+" §7frammenti Medium in §a"+key/9+" §7key!");
 				p.sendMessage("§2§lFazioni §8§l» §7Sono stati convertiti §a"+koth+" §7frammenti Koth in §a"+koth/2+" §7key!");
@@ -64,18 +64,18 @@ public class ConvertKey implements CommandExecutor {
 			
 			if(key != 0 && key % 9 == 0) {
 				
-				remove(Main.frammento, inv, key);
+				remove(FactionsKeyDrop.frammento, inv, key);
 				
 				for(int i = 0; i < key/9; i++) {
-					addItem(inv, Main.key, p.getLocation());
+					addItem(inv, FactionsKeyDrop.key, p.getLocation());
 				}
 				p.sendMessage("§2§lFazioni §8§l» §7Sono stati convertiti §a"+key+" §7frammenti Medium in §a"+key/9+" §7key!");
 				p.updateInventory();
 				return true;
 			} else if(koth != 0 && koth % 2 == 0) {
-				remove(Main.frammento_koth, inv, koth);
+				remove(FactionsKeyDrop.frammento_koth, inv, koth);
 				for(int i = 0; i < koth/2; i++) {
-					addItem(inv, Main.key_koth, p.getLocation());
+					addItem(inv, FactionsKeyDrop.key_koth, p.getLocation());
 				}
 				p.sendMessage("§2§lFazioni §8§l» §7Sono stati convertiti §a"+koth+" §7frammenti Koth in §a"+koth/2+" §7key!");
 				p.updateInventory();
@@ -88,15 +88,15 @@ public class ConvertKey implements CommandExecutor {
 			int removingKey = 9*key;
 			int removingKoth = 2*koth;
 			
-			remove(Main.frammento, inv, removingKey);
-			remove(Main.frammento_koth, inv, removingKoth);
+			remove(FactionsKeyDrop.frammento, inv, removingKey);
+			remove(FactionsKeyDrop.frammento_koth, inv, removingKoth);
 			
 			for(int i = 0; i < key; i++) {
-				addItem(inv, Main.key, p.getLocation());
+				addItem(inv, FactionsKeyDrop.key, p.getLocation());
 			}
 			
 			for(int i = 0; i < koth; i++) {
-				addItem(inv, Main.key_koth, p.getLocation());
+				addItem(inv, FactionsKeyDrop.key_koth, p.getLocation());
 			}
 			
 			if(key > 1) {

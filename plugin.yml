@@ -1,8 +1,8 @@
-name: FactionKeyDrop
+name: FactionsKeyDrop
 version: 1.0
 description: Mob droppano frammenti di Key
 author: claxon007
-main: main.Main
+main: it.evermine.factionskeydrop.FactionsKeyDrop
 
 commands:
   givekey:
